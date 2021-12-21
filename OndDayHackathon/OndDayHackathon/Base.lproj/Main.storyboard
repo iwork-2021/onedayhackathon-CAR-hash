@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZhA-2R-ecb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Single Photo View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="SinglePhotoViewController" customModule="OndDayHackathon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HuE-TP-xXc">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HuE-TP-xXc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9yu-Zk-03H"/>
+                            <constraint firstItem="HuE-TP-xXc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ljn-ML-aQw"/>
+                            <constraint firstItem="HuE-TP-xXc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qU1-fJ-bYz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HuE-TP-xXc" secondAttribute="trailing" id="xeo-ud-VrH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="J4i-19-Tpu"/>
+                    <connections>
+                        <outlet property="imageV" destination="HuE-TP-xXc" id="ARI-HZ-Bn9"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="187" y="-1049"/>
+        </scene>
+        <!--浏览-->
+        <scene sceneID="SI3-k0-BIN">
+            <objects>
+                <tableViewController id="Vaq-sF-FuJ" customClass="MainViewController" customModule="OndDayHackathon" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="TopLeft" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="9w0-Tf-b00">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="toolCell" id="WIL-P6-f9h" customClass="ToolCell" customModule="OndDayHackathon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WIL-P6-f9h" id="PA6-hS-3ng">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="qWM-lc-NQP">
+                                            <rect key="frame" x="16" y="6" width="75" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Camera"/>
+                                            <connections>
+                                                <action selector="addFromCamera:" destination="WIL-P6-f9h" eventType="touchUpInside" id="GMT-ny-uNE"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="mDX-74-GSq">
+                                            <rect key="frame" x="95" y="6" width="67" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Album"/>
+                                            <connections>
+                                                <action selector="addFromAlbum:" destination="WIL-P6-f9h" eventType="touchUpInside" id="S4W-gK-7ul"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="150" id="feg-cb-Ihx" customClass="ImageCell" customModule="OndDayHackathon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="194.5" width="414" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="feg-cb-Ihx" id="yGm-d8-CD9">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Si0-fw-3EC">
+                                            <rect key="frame" x="0.0" y="0.0" width="264" height="150"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMj-hs-uYt">
+                                            <rect key="frame" x="264" y="65" width="130" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Si0-fw-3EC" firstAttribute="top" secondItem="yGm-d8-CD9" secondAttribute="top" id="6j4-dT-L8c"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gMj-hs-uYt" secondAttribute="trailing" id="KQy-xR-XHX"/>
+                                        <constraint firstItem="gMj-hs-uYt" firstAttribute="top" secondItem="yGm-d8-CD9" secondAttribute="topMargin" constant="54" id="TgT-2R-BTq"/>
+                                        <constraint firstAttribute="trailing" secondItem="Si0-fw-3EC" secondAttribute="trailing" constant="150" id="VhE-91-eoJ"/>
+                                        <constraint firstItem="Si0-fw-3EC" firstAttribute="leading" secondItem="yGm-d8-CD9" secondAttribute="leading" id="m1Y-TU-Aeq"/>
+                                        <constraint firstItem="gMj-hs-uYt" firstAttribute="leading" secondItem="Si0-fw-3EC" secondAttribute="trailing" id="mYQ-Ug-99A"/>
+                                        <constraint firstAttribute="bottom" secondItem="Si0-fw-3EC" secondAttribute="bottom" id="ufJ-aH-wfC"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gMj-hs-uYt" secondAttribute="bottom" constant="53" id="w0C-Pi-2c3"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="myimageview" destination="Si0-fw-3EC" id="LPT-S8-Pma"/>
+                                    <outlet property="mytag" destination="gMj-hs-uYt" id="MXk-MX-sin"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="imageSegue" id="TBc-tU-zke"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="classCell" rowHeight="80" id="dcm-hU-LtH" customClass="ClassCell" customModule="OndDayHackathon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="344.5" width="414" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dcm-hU-LtH" id="c3Z-4l-YSw" customClass="ClassCell" customModule="OndDayHackathon" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euu-NV-7R4">
+                                            <rect key="frame" x="0.0" y="11" width="414" height="60.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Euu-NV-7R4" firstAttribute="leading" secondItem="c3Z-4l-YSw" secondAttribute="leading" id="6la-vX-9BE"/>
+                                        <constraint firstAttribute="bottom" secondItem="Euu-NV-7R4" secondAttribute="bottom" constant="8.5" id="AEx-r5-K0x"/>
+                                        <constraint firstItem="Euu-NV-7R4" firstAttribute="top" secondItem="c3Z-4l-YSw" secondAttribute="top" constant="11" id="Agb-WW-2rj"/>
+                                        <constraint firstAttribute="trailing" secondItem="Euu-NV-7R4" secondAttribute="trailing" id="JPL-QO-cOO"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="mytag" destination="Euu-NV-7R4" id="T8O-2T-yJT"/>
+                                    <segue destination="h8g-ZT-isw" kind="show" identifier="classSegue" id="wCQ-aL-CAD"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pureImageCell" rowHeight="150" id="Rp7-VC-QfV" customClass="PureImageCell" customModule="OndDayHackathon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="424.5" width="414" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rp7-VC-QfV" id="izb-0H-Sfh">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hbM-tj-agl">
+                                            <rect key="frame" x="50" y="0.0" width="314" height="150"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="hbM-tj-agl" firstAttribute="top" secondItem="izb-0H-Sfh" secondAttribute="top" id="Qay-wn-li5"/>
+                                        <constraint firstAttribute="trailing" secondItem="hbM-tj-agl" secondAttribute="trailing" constant="50" id="bLZ-o1-Ar6"/>
+                                        <constraint firstItem="hbM-tj-agl" firstAttribute="leading" secondItem="izb-0H-Sfh" secondAttribute="leading" constant="50" id="gu8-eo-yv2"/>
+                                        <constraint firstAttribute="bottom" secondItem="hbM-tj-agl" secondAttribute="bottom" id="q3P-dd-tPO"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageV" destination="hbM-tj-agl" id="GkP-cq-GIl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Vaq-sF-FuJ" id="EN8-c3-PxA"/>
+                            <outlet property="delegate" destination="Vaq-sF-FuJ" id="BgF-h9-q2O"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="浏览" id="1Db-4A-2Se">
+                        <leftBarButtonItems>
+                            <barButtonItem title="拍照" id="aB9-Db-YvB">
+                                <connections>
+                                    <action selector="takePicture" destination="Vaq-sF-FuJ" id="tSX-RZ-DU1"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="相册" id="dcA-6T-CPh">
+                                <connections>
+                                    <action selector="choosePhoto" destination="Vaq-sF-FuJ" id="FOd-n3-a80"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="以类别浏览" id="f2V-wK-TLJ">
+                            <connections>
+                                <action selector="changeViewMode:" destination="Vaq-sF-FuJ" id="ENz-9E-TBB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="viewModeButton" destination="f2V-wK-TLJ" id="UlN-dn-EIp"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q9K-9Q-LoH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-868.11594202898561" y="-1049.3303571428571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PqJ-nv-O4B">
+            <objects>
+                <navigationController id="ZhA-2R-ecb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3P6-RO-Qb5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Vaq-sF-FuJ" kind="relationship" relationship="rootViewController" id="BXB-8S-6gO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ug-hg-WNt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1684" y="-1049"/>
+        </scene>
+        <!--Class Table View Controller-->
+        <scene sceneID="FP8-NO-qoL">
+            <objects>
+                <tableViewController id="h8g-ZT-isw" customClass="ClassTableViewController" customModule="OndDayHackathon" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="dTj-QE-Ajt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pureImageCell" rowHeight="150" id="Z5w-Rm-JAj" customClass="PureImageCell" customModule="OndDayHackathon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z5w-Rm-JAj" id="nUH-s3-9ck">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P4B-f5-ef9">
+                                            <rect key="frame" x="20" y="11" width="374" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="P4B-f5-ef9" firstAttribute="leading" secondItem="nUH-s3-9ck" secondAttribute="leadingMargin" id="7jH-n5-xrF"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="P4B-f5-ef9" secondAttribute="trailing" id="7mw-2A-aw9"/>
+                                        <constraint firstItem="P4B-f5-ef9" firstAttribute="top" secondItem="nUH-s3-9ck" secondAttribute="topMargin" id="N1N-XU-GnE"/>
+                                        <constraint firstItem="P4B-f5-ef9" firstAttribute="bottom" secondItem="nUH-s3-9ck" secondAttribute="bottomMargin" id="tFM-t4-9bx"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageV" destination="P4B-f5-ef9" id="ewX-aJ-XKh"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="pureImageSegue" id="DGW-aO-zRI"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="h8g-ZT-isw" id="wvf-hT-PFn"/>
+                            <outlet property="delegate" destination="h8g-ZT-isw" id="EKZ-2a-PD9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="TIa-0X-rDb"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GCc-OQ-jfc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-264" y="-1722"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="DGW-aO-zRI"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
